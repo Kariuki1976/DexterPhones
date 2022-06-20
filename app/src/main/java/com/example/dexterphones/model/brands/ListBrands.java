@@ -16,10 +16,7 @@ public class ListBrands {
     @Expose
     private List<Datum> data = null;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
+
     public ListBrands() {
     }
 
