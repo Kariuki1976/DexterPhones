@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">DexterPhones</string>
+    <string name="bg_img_desc">Image View</string>
+    <string name="login_welcome">Welcome Back To</string>
+    <string name="login_welcome_text">Dexter!</string>
+    <string name="login_email">Email Address</string>
+    <string name="login_email_dummy">Enter Your Email</string>
+    <string name="login_password_hint">PASSWORD</string>
+    <string name="login_password_ph">Enter Password</string>
+    <string name="login_remember_text">Remember Me</string>
+    <string name="login_btn_text">Log In</string>
+    <string name="login_forgot_text">Forgot Password?</string>
+    <string name="login_error_text">Incorrect Email or Password</string>
+    <string name="login_signup_text">New User? Sign Up</string>
 </resources>
