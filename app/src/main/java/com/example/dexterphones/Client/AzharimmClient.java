@@ -23,6 +23,6 @@ public class AzharimmClient {
                     .build();
         }
 
-        return retrofit.create(AzharimmAPI.class);
+
     }
 }
