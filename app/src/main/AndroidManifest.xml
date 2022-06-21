@@ -14,7 +14,7 @@
         android:theme="@style/Theme.DexterPhones"
         tools:targetApi="31">
         <activity
-            android:name=".BrandsActivity"
+            android:name=".ui.BrandsActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
