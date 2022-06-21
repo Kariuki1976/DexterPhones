@@ -20,11 +20,7 @@ public class ListBrands {
     public ListBrands() {
     }
 
-    /**
-     * 
-     * @param data
-     * @param status
-     */
+
     public ListBrands(Boolean status, List<Datum> data) {
         super();
         this.status = status;

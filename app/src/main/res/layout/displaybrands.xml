@@ -26,7 +26,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:text="TextView"
-                android:textSize="20sp"
+                android:textColor="#17E31F"
+                android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/textView3"
                 app:layout_constraintTop_toTopOf="@+id/textView3" />
 
@@ -34,10 +35,10 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:text="Brand:"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Slug:"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/textView3"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -59,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Count:"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/textView4"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -70,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Detail:"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/textView5"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -81,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@+id/brandName"
                 app:layout_constraintTop_toBottomOf="@+id/brandName" />
 
@@ -91,17 +92,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
-                android:textSize="20sp"
+                android:textColor="#FF5722"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@+id/slug"
                 app:layout_constraintTop_toBottomOf="@+id/slug" />
 
             <TextView
                 android:id="@+id/detail"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
-                android:textSize="20sp"
+                android:textColor="#314AD6"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@+id/count"
                 app:layout_constraintTop_toBottomOf="@+id/count" />
         </androidx.constraintlayout.widget.ConstraintLayout>
