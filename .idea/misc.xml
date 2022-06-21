@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/bottom_nav_selector.xml" value="0.17" />
         <entry key="app/src/main/res/drawable/login_bg_img.xml" value="0.161" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.11854103343465046" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.22" />
       </map>
     </option>
