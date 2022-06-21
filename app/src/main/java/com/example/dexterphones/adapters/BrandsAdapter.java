@@ -1,6 +1,7 @@
 package com.example.dexterphones.adapters;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,28 +19,30 @@ import butterknife.ButterKnife;
 
 public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.BrandsViewHolder>{
 
-    private List<Datum> mRbrands;
+    private List<Datum> mBrands;
     private Context mContext;
 
     public BrandsAdapter(Context context, List<Datum> brands) {
         mContext = context;
-        mRbrands = brands;
+        mBrands = brands;
     }
 
     @NonNull
     @Override
     public BrandsAdapter.BrandsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.displaybrands, parent, false);
+        BrandsViewHolder viewHolder = new BrandsViewHolder(view);
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull BrandsAdapter.BrandsViewHolder holder, int position) {
-
+        holder.bindBrands(mBrands.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mBrands.size();
     }
 
     public class BrandsViewHolder extends RecyclerView.ViewHolder {
@@ -52,6 +55,12 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.BrandsView
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+        }
+       public void bindBrands(Datum datum){
+            mBrand.setText(datum.getBrandName());
+            mSlug.setText(datum.getBrandSlug());
+            mCount.setText(datum.getDeviceCount());
+            mDetail.setText(datum.getDetail());
         }
     }
 }
