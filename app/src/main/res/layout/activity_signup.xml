@@ -117,8 +117,61 @@
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordOutlinedTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/signup_password_hint"
+            app:endIconMode="password_toggle"
+            app:expandedHintEnabled="false"
+            app:hintTextAppearance="@style/TextAppearance.MyTheme.Subtitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailOutlinedTextField"
+            app:placeholderText="@string/signup_password_ph"
+            app:placeholderTextAppearance="@style/TextAppearance.MyTheme.Body2">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp" />
 
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirmPasswordOutlinedTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/signup_conf_password_hint"
+            app:endIconMode="password_toggle"
+            app:expandedHintEnabled="false"
+            app:hintTextAppearance="@style/TextAppearance.MyTheme.Subtitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordOutlinedTextField"
+            app:placeholderText="@string/signup_cnf_password_ph"
+            app:placeholderTextAppearance="@style/TextAppearance.MyTheme.Body2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_cnf_password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
