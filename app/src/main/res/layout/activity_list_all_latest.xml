@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/midnightPurple"
     tools:context=".ListAllLatestActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -43,8 +44,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="latest devices"
         android:textAllCaps="true"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/midnightPurple"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"/>
     <TextView

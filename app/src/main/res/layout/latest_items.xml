@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="280dp"
     android:orientation="vertical"
     android:weightSum="6">
 
     <GridLayout
+        android:id="@+id/mainGrid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6"
+        android:orientation="horizontal"
         android:rowCount="50"
-        android:columCount="2">
+
+       android:columnCount="2">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -21,7 +24,7 @@
             android:layout_rowWeight="1"
             android:layout_margin="8dp"
             app:cardBackgroundColor="@color/white"
-            app:cardElevation="5dp">
+            app:cardElevation="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -33,25 +36,23 @@
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="40dp"
                     android:src="@drawable/ic_launcher_background"/>
 
                 <TextView
+
                     android:id="@+id/latestTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/midnightPurple"
                     android:textSize="20sp"
-                    android:layout_marginTop="6dp"/>
+                    android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
     </GridLayout>
-
-
-
-
 
 </LinearLayout>
