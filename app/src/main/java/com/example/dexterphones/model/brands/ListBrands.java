@@ -16,18 +16,11 @@ public class ListBrands {
     @Expose
     private List<Datum> data = null;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
+
     public ListBrands() {
     }
 
-    /**
-     * 
-     * @param data
-     * @param status
-     */
+
     public ListBrands(Boolean status, List<Datum> data) {
         super();
         this.status = status;
