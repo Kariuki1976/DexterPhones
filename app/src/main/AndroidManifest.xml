@@ -16,6 +16,9 @@
         android:theme="@style/Theme.DexterPhones"
         tools:targetApi="31">
         <activity
+            android:name=".BrandsDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.BrandsActivity"
             android:exported="false" />
         <activity

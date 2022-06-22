@@ -55,12 +55,11 @@ public class BrandsActivity extends AppCompatActivity {
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
 
-                    showRestaurants();
+                    showBrands();
                 } else {
                     showUnsuccessfulMessage();
                 }
             }
-
             @Override
             public void onFailure(Call<ListBrands> call, Throwable t) {
                 hideProgressBar();
@@ -78,7 +77,7 @@ public class BrandsActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
-    private void showRestaurants() {
+    private void showBrands() {
         mRecyclerView.setVisibility(View.VISIBLE);
     }
 

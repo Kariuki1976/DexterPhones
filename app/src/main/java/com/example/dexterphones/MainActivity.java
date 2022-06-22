@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.dexterphones.ui.BrandsActivity;
@@ -23,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         mCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fade);
                 Intent intent = new Intent(MainActivity.this, BrandsActivity.class);
+                mCheck.startAnimation(animation);
                 startActivity(intent);
             }
         });
