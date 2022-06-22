@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".PhoneListActivity">
 
-    <ListView
-        android:id="@+id/listView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/phoneTextView"
+        android:layout_below="@id/typeTextView"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="16dp"
         android:visibility="gone" />
 
@@ -20,22 +21,20 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"/>
 
     <TextView
-        android:id="@+id/phoneTextView"
+        android:id="@+id/typeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Phones of type "
-        android:visibility="gone" />
+        android:text="Phone of type"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/errorTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="16dp"
+        android:text="TextView"
         android:visibility="gone" />
 
 </RelativeLayout>
