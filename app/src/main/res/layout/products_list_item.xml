@@ -64,7 +64,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/product_image_view"
-            tools:text="Item Name name name wofe348" />
+            tools:text="Huawei Y9" />
 
         <RatingBar
             android:id="@+id/product_rating_bar"
@@ -88,7 +88,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/product_rating_bar"
-            tools:text="$2000" />
+            tools:text="Ksh 20,000" />
 
         <TextView
             android:id="@+id/product_actual_price_tv"
