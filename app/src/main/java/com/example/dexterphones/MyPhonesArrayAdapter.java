@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dexterphones.model.phones.Data;
 import com.example.dexterphones.model.phones.Phone;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.List;
 
@@ -52,10 +53,10 @@ public class MyPhonesArrayAdapter extends RecyclerView.Adapter<MyPhonesArrayAdap
 
     public class PhoneViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.brandName) TextView mBrand;
-        @BindView(R.id.phoneName) TextView mPhoneName;
-        @BindView(R.id.phoneImage) TextView mImage;
-        @BindView(R.id.detail) TextView mDetail;
+        @BindView(R.id.brandNameTextView) TextView mBrand;
+        @BindView(R.id.phoneNameTextView) TextView mPhoneName;
+        @BindView(R.id.phoneImageView) TextView mImage;
+        @BindView(R.id.detailTextView) TextView mDetail;
 
 
         public PhoneViewHolder(@NonNull View itemView) {
@@ -67,7 +68,7 @@ public class MyPhonesArrayAdapter extends RecyclerView.Adapter<MyPhonesArrayAdap
             mBrand.setText(device.getBrand());
             mPhoneName.setText(device.getPhoneName());
             mDetail.setText(device.getDetail());
-           Picasso.get().load(device.getImage()).into(mImage);
+           Picasso.get().load(device.getImage()).into((Target) mImage);
         }
 
     }
