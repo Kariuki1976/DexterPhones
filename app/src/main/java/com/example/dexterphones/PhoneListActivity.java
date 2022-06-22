@@ -1,10 +1,12 @@
 package com.example.dexterphones;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -27,11 +29,12 @@ import retrofit2.Response;
 
 public class PhoneListActivity extends AppCompatActivity {
     private static final String TAG = PhoneListActivity.class.getSimpleName();
-
-    @BindView(R.id.phoneTextView) TextView mPhoneTextView;
-   @BindView(R.id.listView) ListView mListView;
+    private MyPhonesArrayAdapter mAdapter;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    public List<Phone> devices;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,30 +42,28 @@ public class PhoneListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String phone = intent.getStringExtra("phone");
-        mPhoneTextView.setText("Here are all the phones of type: " + phone);
+
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+
+        String phone = intent.getStringExtra("query");
 
         AzharimmAPI client = AzharimmClient.getClient();
-
         Call<SearchPhone> call = client.getDevices(phone);
 
         call.enqueue(new Callback<SearchPhone>() {
             @Override
             public void onResponse(Call<SearchPhone> call, Response<SearchPhone> response) {
+
                 hideProgressBar();
 
                 if (response.isSuccessful()) {
-                    List<Phone> phonesList = response.body().getData().getPhones();
-                    String[] devices = new String[phonesList.size()];
-
-
-                    for (int i = 0; i < devices.length; i++){
-                        devices[i] = phonesList.get(i).getPhoneName();
-                    }
-
-                    ArrayAdapter adapter
-                            = new MyPhonesArrayAdapter(PhoneListActivity.this, android.R.layout.simple_list_item_1, devices);
-                    mListView.setAdapter(adapter);
+                    devices = response.body().getData().getPhones();
+                    mAdapter = new MyPhonesArrayAdapter(PhoneListActivity.this, devices);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(PhoneListActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
 
                     showRestaurants();
                 } else {
@@ -72,11 +73,13 @@ public class PhoneListActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<SearchPhone> call, Throwable t) {
+                Log.e(TAG, "onFailure: ",t );
                 hideProgressBar();
                 showFailureMessage();
             }
 
         });
+
     }
 
     private void showFailureMessage() {
@@ -90,8 +93,7 @@ public class PhoneListActivity extends AppCompatActivity {
     }
 
     private void showRestaurants() {
-        mListView.setVisibility(View.VISIBLE);
-        mPhoneTextView.setVisibility(View.VISIBLE);
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {
