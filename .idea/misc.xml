@@ -12,6 +12,11 @@
         <entry key="app/src/main/res/drawable/ic_favorite_filled_24.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/ic_favorite_outlined_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_outline_arrow_back_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_outline_library_books_24.xml" value="0.161" />
+        <entry key="app/src/main/res/drawable/ic_outlined_home_24.xml" value="0.161" />
+        <entry key="app/src/main/res/drawable/ic_outlined_person_24.xml" value="0.161" />
+        <entry key="app/src/main/res/drawable/ic_outlined_shopping_cart_24.xml" value="0.161" />
+        <entry key="app/src/main/res/drawable/ic_search_24.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/login_bg_img.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/round_outline_rect.xml" value="0.161" />
@@ -31,6 +36,7 @@
         <entry key="app/src/main/res/layout/layout_circular_loader.xml" value="0.24270833333333333" />
         <entry key="app/src/main/res/layout/layout_home_top_app_bar.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/products_list_item.xml" value="0.22" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.24375" />
       </map>
     </option>
   </component>

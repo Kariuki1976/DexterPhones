@@ -33,8 +33,13 @@
     <string name="add_img_close_btn_desc">Image Remove Button</string>
     <string name="product_actual_price_text"><strike>Ksh 30,000</strike></string>
     <string name="product_offer_percent_text">25% Off</string>
+    <string name="search_placeholder_text">Search Product</string>
     <string name="home_add_fab_desc">Add Product FAB</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="bottom_nav_home_label">Home</string>
+    <string name="bottom_nav_cart_label">Cart</string>
+    <string name="bottom_nav_account_label">Account</string>
+    <string name="bottom_nav_orders_label">Orders</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

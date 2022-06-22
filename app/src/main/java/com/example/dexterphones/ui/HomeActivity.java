@@ -1,6 +1,8 @@
 package com.example.dexterphones.ui;
 
 import android.os.Bundle;
+
+import com.example.dexterphones.databinding.ActivityHomeBinding;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
