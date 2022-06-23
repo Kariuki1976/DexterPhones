@@ -45,8 +45,6 @@ public class ListAllLatestActivity extends AppCompatActivity {
 
     //our recycler
     @BindView(R.id.latestRecyclerView) RecyclerView latestRecyclerView;
-//    EditText searchbar=findViewById(R.id.searchLatest);
-
 
 
     @Override
@@ -54,10 +52,6 @@ public class ListAllLatestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_all_latest);
         ButterKnife.bind(this);
-
-
-
-
 
 
         azharimmAPI= AzharimmClient.getClient();
@@ -89,35 +83,10 @@ public class ListAllLatestActivity extends AppCompatActivity {
             }
         });
 
-//        searchbar.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                filter(s.toString());
-//
-//            }
-//        });
+
 
     }
 
-    private void filter(String text) {
-        List<Phone>filterList=new ArrayList<>();
-        for(Phone items : mlatest){
-            if(items.getPhoneName().toLowerCase().contains(text.toLowerCase())){
-                filterList.add(items);
-            }
-        }
-        latestAdapter.filterList(filterList);
-    }
 
 
 }
