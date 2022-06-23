@@ -11,8 +11,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.dexterphones.Constants.Constants;
 import com.example.dexterphones.model.phones.Phone;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -21,7 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class PhoneDetailFragment extends Fragment implements View.OnClickListener{
+public class PhoneDetailFragment extends Fragment{
     @BindView(R.id.phoneImageView) ImageView mImageLabel;
     @BindView(R.id.phoneNameTextView) TextView mPhoneNameLabel;
     @BindView(R.id.brandNameTextView) TextView mBrandNameLabel;
@@ -35,7 +41,7 @@ public class PhoneDetailFragment extends Fragment implements View.OnClickListene
     }
 
 
-    public static PhoneDetailFragment newInstance(Phone, device) {
+    public static PhoneDetailFragment newInstance(Phone device) {
         PhoneDetailFragment phoneDetailFragment = new PhoneDetailFragment();
         Bundle args = new Bundle();
         args.putParcelable("device", Parcels.wrap(device));
@@ -64,8 +70,25 @@ public class PhoneDetailFragment extends Fragment implements View.OnClickListene
         mBrandNameLabel.setText(mDevice.getBrand());
         mWebsiteLabel.setText(mDevice.getDetail());
 
-        mSavePhoneButton.setOnClickListener(this);
+//        mSavePhoneButton.setOnClickListener(this);
 
         return view;
     }
+//    @Override
+//    public void onClick(View v) {
+//        if (v == mSavePhoneButton) {
+//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//            String uid = user.getUid();
+//            DatabaseReference occasionRef = FirebaseDatabase
+//                    .getInstance()
+//                    .getReference(Constants.FIREBASE_CHILD_OCCASIONS)
+//                    .child(uid);
+//
+//            DatabaseReference pushRef = occasionRef.push();
+//            String pushId = pushRef.getKey();
+//            mDevice.setPushId(pushId);
+//            pushRef.setValue(mDevice);
+//            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }
