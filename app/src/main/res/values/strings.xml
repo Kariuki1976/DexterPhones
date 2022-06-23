@@ -2,4 +2,55 @@
     <string name="app_name">DexterPhones</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="bg_img_desc">Image View</string>
+    <string name="login_welcome">Welcome Back To</string>
+    <string name="login_welcome_text">Dexter!</string>
+    <string name="login_email">Email Address</string>
+    <string name="login_email_dummy">Enter Your Email</string>
+    <string name="login_password_hint">PASSWORD</string>
+    <string name="login_password_ph">Enter Password</string>
+    <string name="login_remember_text">Remember Me</string>
+    <string name="login_btn_text">Log In</string>
+    <string name="login_forgot_text">Forgot Password?</string>
+    <string name="login_error_text">Incorrect Email or Password</string>
+    <string name="login_signup_text">New User? Sign Up</string>
+    <string name="signup_welcome_hello">Hello There!</string>
+    <string name="signup_welcome_text">Sign Up!</string>
+    <string name="signup_name_hint">USER NAME</string>
+    <string name="signup_mobile_hint">MOBILE</string>
+    <string name="signup_password_hint">PASSWORD</string>
+    <string name="signup_conf_password_hint">CONFIRM PASSWORD</string>
+    <string name="signup_switch_tnc_label">I accept the policy and terms</string>
+    <string name="signup_btn_text">Sign Up</string>
+    <string name="signup_name_ph">Your Name</string>
+    <string name="signup_mobile_ph">Your Mobile</string>
+    <string name="signup_email_hint">E-Mail</string>
+    <string name="signup_email_ph">Your email</string>
+    <string name="signup_password_ph">Enter Password</string>
+    <string name="signup_cnf_password_ph">Enter Password Again</string>
+    <string name="signup_login_text">Already have an account? Log In</string>
+    <string name="signup_seller_text">Do you wish to receive daily updates on products?</string>
+    <string name="app_icon_img_desc">App Icon</string>
+    <string name="add_img_item_desc">Image Item</string>
+    <string name="add_img_close_btn_desc">Image Remove Button</string>
+    <string name="product_actual_price_text"><strike>Ksh 30,000</strike></string>
+    <string name="product_offer_percent_text">25% Off</string>
+    <string name="search_placeholder_text">Search Phone</string>
+    <string name="home_add_fab_desc">Add Product FAB</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="bottom_nav_home_label">Home</string>
+    <string name="bottom_nav_cart_label">Cart</string>
+    <string name="bottom_nav_account_label">Account</string>
+    <string name="bottom_nav_orders_label">Orders</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>

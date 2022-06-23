@@ -5,7 +5,10 @@ import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
 @Generated("jsonschema2pojo")
+@Parcel
 public class Datum {
 
     @SerializedName("brand_id")
@@ -24,21 +27,11 @@ public class Datum {
     @Expose
     private String detail;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
+
     public Datum() {
     }
 
-    /**
-     * 
-     * @param brandSlug
-     * @param brandName
-     * @param deviceCount
-     * @param brandId
-     * @param detail
-     */
+
     public Datum(Integer brandId, String brandName, String brandSlug, Integer deviceCount, String detail) {
         super();
         this.brandId = brandId;
