@@ -5,17 +5,14 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dexterphones.model.phones.Data;
 import com.example.dexterphones.model.phones.Phone;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import org.parceler.Parcels;
 
@@ -59,8 +56,7 @@ public class MyPhonesArrayAdapter extends RecyclerView.Adapter<MyPhonesArrayAdap
 
         @BindView(R.id.brandNameTextView) TextView mBrand;
         @BindView(R.id.phoneNameTextView) TextView mPhoneName;
-        @BindView(R.id.phoneImageView)
-        ImageView mImage;
+        @BindView(R.id.phoneImageView) ImageView mImage;
         @BindView(R.id.detailTextView) TextView mDetail;
 
         private Context mContext;
