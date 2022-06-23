@@ -7,20 +7,6 @@
     android:background="@drawable/img"
     tools:context=".MainActivity">
 
-    <!--    <fadingText-->
-    <!--        android:id="@+id/fadingTextView"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:textSize="22sp"-->
-    <!--        android:textColor="#2AC308"-->
-    <!--        android:textStyle="bold"-->
-    <!--        app:timeout="500"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--        app:layout_constraintRight_toRightOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        tools:ignore="MissingClass" />-->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -50,8 +36,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="112dp"
         android:layout_height="332dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="104dp"
         android:background="#F2F2F2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -64,7 +50,7 @@
             android:background="@drawable/buttons"
             android:gravity="center"
             android:text="My Cart"
-            android:textColor="#070606"
+            android:textColor="#F8F5F5"
             android:textSize="16sp"
             android:textStyle="italic"
             app:layout_constraintStart_toStartOf="@+id/brands"
@@ -80,7 +66,7 @@
             android:background="@drawable/buttons"
             android:gravity="center"
             android:text="Search"
-            android:textColor="#070606"
+            android:textColor="#F8F5F5"
             android:textSize="16sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +82,7 @@
             android:background="@drawable/buttons"
             android:gravity="center"
             android:text="Latest"
-            android:textColor="#070606"
+            android:textColor="#F8F5F5"
             android:textSize="16sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +97,7 @@
             android:background="@drawable/buttons"
             android:gravity="center"
             android:text="Brands"
-            android:textColor="#070606"
+            android:textColor="#F8F5F5"
             android:textSize="16sp"
             android:textStyle="italic"
             app:layout_constraintStart_toStartOf="@+id/latest"
@@ -125,7 +111,7 @@
             android:background="@drawable/buttons"
             android:gravity="center"
             android:text="Logout"
-            android:textColor="#070606"
+            android:textColor="#FAF6F6"
             android:textSize="16sp"
             android:textStyle="italic"
             app:layout_constraintStart_toStartOf="@+id/cart"

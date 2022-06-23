@@ -5,17 +5,16 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dexterphones.model.phones.Data;
 import com.example.dexterphones.model.phones.Phone;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
+
+import org.parceler.Parcels;
 
 import org.parceler.Parcels;
 
@@ -84,6 +83,17 @@ public class MyPhonesArrayAdapter extends RecyclerView.Adapter<MyPhonesArrayAdap
             intent.putExtra("devices", Parcels.wrap(mDevices));
             mContext.startActivity(intent);
         }
+<<<<<<< HEAD
+=======
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, PhoneDetailACtivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("devices", Parcels.wrap(mDevices));
+            mContext.startActivity(intent);
+        }
+>>>>>>> 3fe53abc7a589ca8febc6c68d4d689b4898c5bc9
     }
 
 }
