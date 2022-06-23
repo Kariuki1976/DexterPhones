@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "518066551003",
+    "project_id": "dexterphones-fd44a",
+    "storage_bucket": "dexterphones-fd44a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518066551003:android:892fdf9ac48b51a61834fe",
+        "android_client_info": {
+          "package_name": "com.example.dexterphones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518066551003-j7dmc7loa23u2sc9c1ot5vija93qfjhr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkN2ALCxVzmC5Trau1EvSahYPQBrEuP9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518066551003-j7dmc7loa23u2sc9c1ot5vija93qfjhr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
