@@ -3,6 +3,7 @@ package com.example.dexterphones;
 import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,8 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.GridLayout;
 
 import com.example.dexterphones.Adapters.LatestAdapter;
@@ -22,6 +26,7 @@ import com.example.dexterphones.model.latest.Data;
 import com.example.dexterphones.model.latest.ListLatest;
 import com.example.dexterphones.model.latest.Phone;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -37,9 +42,10 @@ public class ListAllLatestActivity extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager;
     LatestAdapter latestAdapter;
     Context context;
-    GridLayout mainGrid;
+
     //our recycler
     @BindView(R.id.latestRecyclerView) RecyclerView latestRecyclerView;
+    EditText searchbar=findViewById(R.id.searchLatest);
 
 
 
@@ -48,8 +54,7 @@ public class ListAllLatestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_all_latest);
         ButterKnife.bind(this);
-//        mainGrid=(GridLayout)findViewById(R.id.mainGrid);
-//        setSingleEvent(mainGrid);
+
 
 
 
@@ -58,26 +63,9 @@ public class ListAllLatestActivity extends AppCompatActivity {
         azharimmAPI= AzharimmClient.getClient();
         getLatest();
 
+
     }
-
-//    private void setSingleEvent(GridLayout mainGrid) {
-////        for(int i=0; i<mainGrid.getChildCount(); i++){
-////            CardView cardView=(CardView) mainGrid.getChildAt(i);
-////            final int finalI=i;
-////            cardView.setOnClickListener(new View.OnClickListener() {
-////                @Override
-////                public void onClick(View v) {
-////                    if(finalI==0){
-////                        Intent intent= new Intent(ListAllLatestActivity.this, PhoneDetailsActivity.class);
-////                        startActivity(intent);
-////                    }
-////
-////
-////                }
-////            });
-////        }
-//    }
-
+    
     private void getLatest() {
         Call<ListLatest>call= azharimmAPI.getLatest();
         call.enqueue(new Callback<ListLatest>() {
@@ -86,21 +74,50 @@ public class ListAllLatestActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     int status=response.code();
                     List<Phone>latest=response.body().getData().getPhones();
-                  //  latestRecyclerView.setAdapter(new LatestAdapter());
+                    //  latestRecyclerView.setAdapter(new LatestAdapter());
                     latestAdapter=new LatestAdapter(ListAllLatestActivity.this,latest);
                     latestRecyclerView.setAdapter(latestAdapter);
-                    RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(ListAllLatestActivity.this);
+                    RecyclerView.LayoutManager layoutManager=new GridLayoutManager(ListAllLatestActivity.this,1);
                     latestRecyclerView.setLayoutManager(layoutManager);
-
-                    
 
                 }
             }
 
             @Override
             public void onFailure(Call<ListLatest> call, Throwable t) {
-               Log.e(TAG, "Faaaaaaaailed To GEEEEEEET CONNECTION TO API"+t.getMessage());
+                Log.e(TAG, "Faaaaaaaailed To GEEEEEEET CONNECTION TO API"+t.getMessage());
             }
         });
+
+        searchbar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+
+            }
+        });
+
+    }
+
+    private void filter(String text) {
+        List<Phone>filterList=new ArrayList<>();
+        for(Phone items : mlatest){
+            if(items.getPhoneName().toLowerCase().contains(text.toLowerCase())){
+                filterList.add(items);
+            }
+        }
+        latestAdapter.filterList(filterList);
+    }
+
+
 }
