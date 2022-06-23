@@ -17,5 +17,5 @@ public interface    AzharimmAPI {
     Call<ListLatest> getLatest();
     //search
     @GET("search")
-    Call<SearchPhone>getDevices(@Query("query") String phone);
+    Call<SearchPhone>getDevices(@Query("query") String query);
 }

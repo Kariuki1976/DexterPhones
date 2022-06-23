@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -55,7 +56,8 @@ public class MyPhonesArrayAdapter extends RecyclerView.Adapter<MyPhonesArrayAdap
 
         @BindView(R.id.brandNameTextView) TextView mBrand;
         @BindView(R.id.phoneNameTextView) TextView mPhoneName;
-        @BindView(R.id.phoneImageView) TextView mImage;
+        @BindView(R.id.phoneImageView)
+        ImageView mImage;
         @BindView(R.id.detailTextView) TextView mDetail;
 
 
@@ -68,7 +70,7 @@ public class MyPhonesArrayAdapter extends RecyclerView.Adapter<MyPhonesArrayAdap
             mBrand.setText(device.getBrand());
             mPhoneName.setText(device.getPhoneName());
             mDetail.setText(device.getDetail());
-           Picasso.get().load(device.getImage()).into((Target) mImage);
+           Picasso.get().load(device.getImage()).into(mImage);
         }
 
     }

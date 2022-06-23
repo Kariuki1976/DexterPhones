@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
         if (v == mFindPhonesButton) {
-            String phone = mPhoneEditText.getText().toString();
+            String query = mPhoneEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, PhoneListActivity.class);
-            intent.putExtra("phone", phone);
+            intent.putExtra("query", query);
             startActivity(intent);
         }
     }

@@ -46,10 +46,10 @@ public class PhoneListActivity extends AppCompatActivity {
 //        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 //        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
 
-        String phone = intent.getStringExtra("query");
+        String query = intent.getStringExtra("query");
 
         AzharimmAPI client = AzharimmClient.getClient();
-        Call<SearchPhone> call = client.getDevices(phone);
+        Call<SearchPhone> call = client.getDevices(query);
 
         call.enqueue(new Callback<SearchPhone>() {
             @Override
@@ -58,14 +58,14 @@ public class PhoneListActivity extends AppCompatActivity {
                 hideProgressBar();
 
                 if (response.isSuccessful()) {
-                    devices = response.body().getData().getPhones();
+                    List<Phone> devices = response.body().getData().getPhones();
                     mAdapter = new MyPhonesArrayAdapter(PhoneListActivity.this, devices);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(PhoneListActivity.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
 
-                    showRestaurants();
+                    showDevices();
                 } else {
                     showUnsuccessfulMessage();
                 }
@@ -92,7 +92,7 @@ public class PhoneListActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
-    private void showRestaurants() {
+    private void showDevices() {
         mRecyclerView.setVisibility(View.VISIBLE);
     }
 
