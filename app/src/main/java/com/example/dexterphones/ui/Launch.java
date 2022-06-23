@@ -22,7 +22,7 @@ public class Launch extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Launch.this, SignupActivity.class);
+                Intent intent = new Intent(Launch.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

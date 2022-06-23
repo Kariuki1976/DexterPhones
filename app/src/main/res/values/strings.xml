@@ -33,7 +33,7 @@
     <string name="add_img_close_btn_desc">Image Remove Button</string>
     <string name="product_actual_price_text"><strike>Ksh 30,000</strike></string>
     <string name="product_offer_percent_text">25% Off</string>
-    <string name="search_placeholder_text">Search Product</string>
+    <string name="search_placeholder_text">Search Phone</string>
     <string name="home_add_fab_desc">Add Product FAB</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="bottom_nav_home_label">Home</string>
