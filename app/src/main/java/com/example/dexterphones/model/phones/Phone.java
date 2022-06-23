@@ -5,6 +5,9 @@ import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 @Generated("jsonschema2pojo")
 public class Phone {
 
@@ -24,6 +27,7 @@ public class Phone {
     @Expose
     private String detail;
 
+    private String pushId;
     /**
      * No args constructor for use in serialization
      * 
@@ -88,4 +92,11 @@ public class Phone {
         this.detail = detail;
     }
 
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }

@@ -47,8 +47,6 @@ public class ListAllLatestActivity extends AppCompatActivity {
     @BindView(R.id.latestRecyclerView) RecyclerView latestRecyclerView;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +83,7 @@ public class ListAllLatestActivity extends AppCompatActivity {
             }
         });
 
-//
+
 
     }
 

@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">DexterPhones</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
     <string name="bg_img_desc">Image View</string>
     <string name="login_welcome">Welcome Back To</string>
+    <string name="splash_welcome">Dexter Phones</string>
+    <string name="splash_welcome1">Welcome To</string>
     <string name="login_welcome_text">Dexter!</string>
     <string name="login_email">Email Address</string>
     <string name="login_email_dummy">Enter Your Email</string>
@@ -48,6 +54,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -35,8 +35,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
-        getSupportActionBar().hide(); //hide the title bar
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
+//        getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.activity_signup);
 
         ButterKnife.bind(this);
