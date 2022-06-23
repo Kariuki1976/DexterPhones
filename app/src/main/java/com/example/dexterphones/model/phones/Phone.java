@@ -27,6 +27,7 @@ public class Phone {
     @Expose
     private String detail;
 
+    private String pushId;
     /**
      * No args constructor for use in serialization
      * 
@@ -91,4 +92,11 @@ public class Phone {
         this.detail = detail;
     }
 
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }

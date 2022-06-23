@@ -53,7 +53,7 @@ public class PhoneListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentChoice = mSharedPreferences.getString(Constants.PREFERENCES_TYPE_KEY, null);
+        mRecentChoice = mSharedPreferences.getString(Constants.PREFERENCES_QUERY_KEY, null);
         if(mRecentChoice != null){
             fetchDevices(mRecentChoice);
         }
@@ -111,7 +111,7 @@ public class PhoneListActivity extends AppCompatActivity {
         mProgressBar.setVisibility(View.GONE);
     }
     private void addToSharedPreferences(String query) {
-        mEditor.putString(Constants.PREFERENCES_TYPE_KEY, query).apply();
+        mEditor.putString(Constants.PREFERENCES_QUERY_KEY, query).apply();
     }
 
 
@@ -126,7 +126,7 @@ public class PhoneListActivity extends AppCompatActivity {
                 hideProgressBar();
 
                 if (response.isSuccessful()) {
-                    List<Phone> devices = response.body().getData().getPhones();
+                    devices = response.body().getData().getPhones();
                     mAdapter = new MyPhonesArrayAdapter(PhoneListActivity.this, devices);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(PhoneListActivity.this);
