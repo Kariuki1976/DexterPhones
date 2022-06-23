@@ -36,6 +36,12 @@
             android:name=".ui.BrandsActivity"
             android:exported="false" />
         <activity
+            android:name=".PhoneDetailACtivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
