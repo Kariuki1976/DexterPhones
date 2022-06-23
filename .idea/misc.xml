@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
 
+        <entry key="app/src/main/res/drawable/bg.xml" value="0.147" />
+        <entry key="app/src/main/res/layout/activity_list_all_brands.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_list_all_latest.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/brand_items.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/latest_items.xml" value="0.19375" />
+
+
         <entry key="app/src/main/res/drawable/bottom_nav_selector.xml" value="0.17" />
         <entry key="app/src/main/res/drawable/ic_add_48.xml" value="0.14" />
         <entry key="app/src/main/res/drawable/ic_add_shopping_cart_24.xml" value="0.1" />
@@ -44,9 +51,11 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
 
+
         <entry key="app/src/main/res/layout/activity_brands.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/displaybrands.xml" value="0.25" />
+
       </map>
     </option>
   </component>
