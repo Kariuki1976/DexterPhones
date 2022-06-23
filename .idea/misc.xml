@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2749094202898551" />
+        <entry key="app/src/main/res/layout/activity_phone_detail.xml" value="0.1484375" />
         <entry key="app/src/main/res/layout/activity_phone_list.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/fragment_event_detail.xml" value="0.1484375" />
         <entry key="app/src/main/res/layout/phone_list_item.xml" value="0.264" />
       </map>
     </option>
