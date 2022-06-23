@@ -11,14 +11,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.example.dexterphones.LatestPhoneDetailsFragment;
+import com.example.dexterphones.LatestPhoneDetailsPager;
 import com.example.dexterphones.R;
 import com.example.dexterphones.SearchActivity;
-import com.example.dexterphones.model.latest.Data;
 import com.example.dexterphones.model.latest.Phone;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+import org.parceler.Parcels;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -30,33 +31,26 @@ public class LatestAdapter  extends RecyclerView.Adapter<LatestAdapter.itemViewH
 
 
     // constructor
-    public LatestAdapter(Context context, List<Phone>mlatest) {
+    public LatestAdapter(Context context, List<Phone> latest) {
         this.context = context;
-        this.mlatest=mlatest;
+        this.mlatest=latest;
     }
 
     @NonNull
     @Override
-    public itemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LatestAdapter.itemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // inflate our item
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.latest_items,parent,false);
         itemViewHolder viewHolder=new itemViewHolder(view);
         return viewHolder;
     }
 
-   public void filterList(List<Phone>filterList){
-        mlatest=filterList;
-        notifyDataSetChanged();
-    }
+
 
     @Override
     public void onBindViewHolder(@NonNull itemViewHolder holder, int position) {
         holder.bindLatest(mlatest.get(position));
 
-        holder.itemView.setOnClickListener(v->{
-            Intent intent = new Intent(context, SearchActivity.class);
-//            intent.putExtra("phone",holder.bindLatest(mlatest.);)
-        });
     }
 
     @Override
@@ -65,22 +59,34 @@ public class LatestAdapter  extends RecyclerView.Adapter<LatestAdapter.itemViewH
         return mlatest.size();
     }
 
-    public class itemViewHolder extends RecyclerView.ViewHolder {
+    public class itemViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
         @BindView(R.id.latestImageView)  ImageView latestImageView;
         @BindView(R.id.latestTextView)  TextView latestTextView;
 
 
+        private Context context;
         public itemViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             context=itemView.getContext();
+            itemView.setOnClickListener(this);
 
 
         }
 
-        public void bindLatest(Phone phone){
-            latestTextView.setText(phone.getPhoneName());
-            Picasso.get().load(phone.getImage()).into(latestImageView);
+        public void bindLatest(Phone myPhone){
+            latestTextView.setText(myPhone.getPhoneName());
+            Picasso.get().load(myPhone.getImage()).into(latestImageView);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(context, LatestPhoneDetailsPager.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("latest", Parcels.wrap(mlatest));
+            context.startActivity(intent);
 
         }
     }
