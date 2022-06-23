@@ -4,15 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!--    <fadingText-->
+    <!--        android:id="@+id/fadingTextView"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textSize="22sp"-->
+    <!--        android:textColor="#2AC308"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:timeout="500"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        tools:ignore="MissingClass" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="DexterSolution"
+            android:textColor="#FAF8F8"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="112dp"
+        android:layout_height="332dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        android:background="#F2F2F2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/cart"
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttons"
+            android:gravity="center"
+            android:text="My Cart"
+            android:textColor="#070606"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/brands"
+            app:layout_constraintTop_toBottomOf="@+id/brands" />
+
+        <TextView
+            android:id="@+id/search"
+            android:layout_width="100dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/buttons"
+            android:gravity="center"
+            android:text="Search"
+            android:textColor="#070606"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/latest"
+            android:layout_width="100dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/buttons"
+            android:gravity="center"
+            android:text="Latest"
+            android:textColor="#070606"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/search"
+            app:layout_constraintTop_toBottomOf="@+id/search" />
+
+        <TextView
+            android:id="@+id/brands"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttons"
+            android:gravity="center"
+            android:text="Brands"
+            android:textColor="#070606"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/latest"
+            app:layout_constraintTop_toBottomOf="@+id/latest" />
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="100dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttons"
+            android:gravity="center"
+            android:text="Logout"
+            android:textColor="#070606"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/cart"
+            app:layout_constraintTop_toBottomOf="@+id/cart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

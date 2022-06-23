@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/phoneImageView"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/brandNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand"
+            android:textColor="@color/purple_500"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/phoneNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device Name"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/detailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details:"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+</LinearLayout>

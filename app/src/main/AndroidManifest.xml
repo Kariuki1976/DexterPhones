@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.dexterphones">
+    package="com.example.dexterphones" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,16 +14,67 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DexterPhones"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+
+            android:name=".ui.BrandsDetailActivity"
+            android:exported="false" />
+        <activity
+
+
+            android:name=".ui.HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.DexterPhones.NoActionBar" />
+        <activity
+            android:name=".ui.Launch"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".ui.BrandsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneDetailACtivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity
+            android:name=".ListAllLatestActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".ui.SignupActivity"
+            android:label="@string/app_name" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
