@@ -73,9 +73,8 @@ public class BrandsDetailFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (v == mDetail) {
-            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mData.getBrandSlug()));
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mData.getDetail()));
             startActivity(webIntent);
-
         }
     }
 }

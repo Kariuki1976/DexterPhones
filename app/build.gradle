@@ -68,6 +68,9 @@ dependencies {
 //    Parceler
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
+    //courasel
+//    implementation 'com.synnapps:carouselview:0.1.4'
+//    implementation 'com.tomer:fadingtextview:2.5'
 
 //    Firebase
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
@@ -77,4 +80,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.firebaseui:firebase-ui-database:7.1.1'
     implementation 'com.google.firebase:firebase-auth'
+
 }

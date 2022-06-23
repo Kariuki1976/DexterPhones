@@ -34,6 +34,10 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.BrandsView
         mContext = context;
         mBrands = brands;
     }
+    public void setFilteredList(List<Datum> filteredList){
+        this.mBrands = filteredList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override

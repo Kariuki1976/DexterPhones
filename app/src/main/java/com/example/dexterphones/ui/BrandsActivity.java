@@ -1,13 +1,16 @@
 package com.example.dexterphones.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dexterphones.Client.AzharimmClient;
 import com.example.dexterphones.Interface.AzharimmAPI;
@@ -16,6 +19,7 @@ import com.example.dexterphones.adapters.BrandsAdapter;
 import com.example.dexterphones.model.brands.Datum;
 import com.example.dexterphones.model.brands.ListBrands;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -26,17 +30,50 @@ import retrofit2.Response;
 
 public class BrandsActivity extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
-    @BindView(R.id.errorTextView)
-    TextView mErrorTextView;
-    @BindView(R.id.progressBar)
-    ProgressBar mProgressBar;
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    @BindView(R.id.searchview) SearchView msearch;
     private BrandsAdapter mAdapter;
+    private List<Datum> mBrands;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
+        getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.activity_brands);
         ButterKnife.bind(this);
+
+        mBrands = new ArrayList<>();
+
+        msearch.clearFocus();
+        msearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+//                filterList(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+            private void filterList(String text) {
+                List<Datum> filteredList = new ArrayList<>();
+                for(Datum datum: mBrands){
+                    if(datum.getBrandName().toLowerCase().contains(text.toLowerCase().trim())){
+                        filteredList.add(datum);
+                    }
+                }
+                if(filteredList.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Brand not found", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    mAdapter.setFilteredList(filteredList);
+                }
+            }
+        });
 
         //consuming the API
         AzharimmAPI client = AzharimmClient.getClient();
