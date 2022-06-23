@@ -27,7 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class PhoneDetailFragment extends Fragment{
+public class PhoneDetailFragment extends Fragment implements View.OnClickListener{
     @BindView(R.id.phoneImageView) ImageView mImageLabel;
     @BindView(R.id.phoneNameTextView) TextView mPhoneNameLabel;
     @BindView(R.id.brandNameTextView) TextView mBrandNameLabel;
@@ -70,25 +70,25 @@ public class PhoneDetailFragment extends Fragment{
         mBrandNameLabel.setText(mDevice.getBrand());
         mWebsiteLabel.setText(mDevice.getDetail());
 
-//        mSavePhoneButton.setOnClickListener(this);
+        mSavePhoneButton.setOnClickListener(this);
 
         return view;
     }
-//    @Override
-//    public void onClick(View v) {
-//        if (v == mSavePhoneButton) {
-//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//            String uid = user.getUid();
-//            DatabaseReference occasionRef = FirebaseDatabase
-//                    .getInstance()
-//                    .getReference(Constants.FIREBASE_CHILD_OCCASIONS)
-//                    .child(uid);
-//
-//            DatabaseReference pushRef = occasionRef.push();
-//            String pushId = pushRef.getKey();
-//            mDevice.setPushId(pushId);
-//            pushRef.setValue(mDevice);
-//            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+    @Override
+    public void onClick(View v) {
+        if (v == mSavePhoneButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference occasionRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_DEVICES)
+                    .child(uid);
+
+            DatabaseReference pushRef = occasionRef.push();
+            String pushId = pushRef.getKey();
+            mDevice.setPushId(pushId);
+            pushRef.setValue(mDevice);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

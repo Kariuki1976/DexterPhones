@@ -7,6 +7,9 @@
     android:background="@drawable/img"
     tools:context=".MainActivity">
 
+
+
+</RelativeLayout>
 <!--    <fadingText-->
 <!--        android:id="@+id/fadingTextView"-->
 <!--        android:layout_width="wrap_content"-->
@@ -149,3 +152,4 @@
 
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
