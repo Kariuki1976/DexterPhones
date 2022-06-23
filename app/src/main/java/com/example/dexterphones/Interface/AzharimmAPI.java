@@ -8,14 +8,14 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public interface AzharimmAPI {
+public interface    AzharimmAPI {
     //list all brands
     @GET("brands")
     Call<ListBrands> getBrands();
     //latest
     @GET("latest")
-    Call<ListLatest> getLatest();
+    Call<ListLatest> getLatest(); //jackie
     //search
     @GET("search")
-    Call<SearchPhone>searchPhone(@Query("query") String phone);
+    Call<SearchPhone>getDevices(@Query("query") String query);
 }

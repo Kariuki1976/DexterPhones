@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
         getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.activity_main);
+
         ButterKnife.bind(this);
 
         mSearch.setOnClickListener(this);
@@ -45,5 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-    }
 }
+
+
+}
+
