@@ -44,7 +44,7 @@ public class PhoneListActivity extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
-    public List<Phone> devices;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +126,7 @@ public class PhoneListActivity extends AppCompatActivity {
                 hideProgressBar();
 
                 if (response.isSuccessful()) {
-                    devices = response.body().getData().getPhones();
+                    List <Phone> devices = response.body().getData().getPhones();
                     mAdapter = new MyPhonesArrayAdapter(PhoneListActivity.this, devices);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(PhoneListActivity.this);
